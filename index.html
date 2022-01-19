@@ -1,0 +1,90 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            padding: 20px;
+        }
+        .button{
+            border: 0px solid blue;
+            color: Black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: light gray;
+            column-span: 1;
+            box-shadow: -2px 4px  darkgray;
+        }
+        .button:hover{
+            background-color: gray;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .display{
+            text-align: right;
+        }
+        
+
+        .span2{
+            grid-column:span 2;
+        }
+        .span3{
+            grid-column:span 3;
+            padding: 40px;
+        }
+
+    </style> 
+
+
+
+
+
+
+</head>
+<body>
+
+    <input class="display" type="text" size="59" value="0" id="display">
+    <div class="grid" id="grid">
+        <script src="script.js"></script>
+
+        <script> 
+        for (let i = 1; i <= 9; i++) {
+            createButton(i, i);    
+        }
+        </script>
+        <div></div>
+        <script>
+            
+            createButton(0, 0);
+            createButton("decPoint", ".");
+            decPoint.onclick = addDecimal = () =>{display.value += "."};
+            decPoint.innerHTML = ".";
+            
+        </script>
+
+        <div class="span3"></div>
+        
+        <script>
+            createButton("clear", "clear", 2, "crimson");
+                clear.onclick = clearFunc=()=>{display.value = "0"};
+            createButton("del", "del", 1, " #4dfcff")
+                del.onclick = deleteOne=()=>{display.value.slice(-1)};
+            
+        </script>
+        
+    </div>
+</body>
+</html>
